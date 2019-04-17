@@ -19,6 +19,15 @@ module.exports = (req, res) => {
 
   const errors = validator([
     {
+      name: 'message',
+      type: 'string',
+      validate: 'required',
+      value: req.body['message'],
+      label: 'Describe the problem',
+      id: 'message',
+      message: 'This field is required'
+    },
+    {
       name: 'name',
       type: 'string',
       validate: 'required',
