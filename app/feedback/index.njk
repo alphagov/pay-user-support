@@ -1,0 +1,77 @@
+{% extends "common/templates/layout.njk" %}
+{% from "components/inset-text/macro.njk" import govukInsetText %}
+{% from "components/textarea/macro.njk" import govukTextarea %}
+{% from "components/input/macro.njk" import govukInput %}
+{% from "components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+  Ask a question or give feedback - Support - GOV.UK Pay
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+      Ask a question or give feedback
+    </h1>
+
+    {{
+      govukInsetText({
+        html: "Read our <a href='https://docs.payments.service.gov.uk/quick_start_guide/#quick-start-guide'>quick start guide</a> to find out how to get started with GOV.UK Pay and decide if it’s right for your service."
+      })
+    }}
+    
+    <form method="post" action="/" >
+      {{
+        govukTextarea({
+          name: "feedback",
+          id: "feedback",
+          rows: "8",
+          label: {
+            text: "Enter your message"
+          }
+        })
+      }}
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-8">Do you want a reply?</h2>
+      <p class="govuk-body">Leave your details below if you’d like a response.</p>
+      {{
+        govukInput({
+          label: {
+            text: "Name"
+          },
+          id: "name",
+          name: "name"
+        })
+      }}
+
+      {{
+        govukInput({
+          label: {
+            text: "Email"
+          },
+          id: "email",
+          name: "email",
+          type: "email"
+        })
+      }}
+
+      {{
+        govukButton({
+          text: "Submit"
+        })
+      }}
+    </form>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h3 class="govuk-heading-m">Chat with GOV.UK Pay on Slack</h3>
+    <p class="govuk-body">You can also talk to us via the cross-government Slack channel #govuk-pay on the UK Government Digital workspace.</p>
+
+    <h3 class="govuk-heading-m">More information</h3>
+    <p class="govuk-body"><a class="govuk-link" href="https://www.payments.service.gov.uk/features/">Read our features page</a> to find out more about what you can do with GOV.UK Pay.</p>
+    <p class="govuk-body">Our <a class="govuk-link" href="https://www.payments.service.gov.uk/roadmap/">roadmap</a> lists new functionality we’re going to offer.</p>
+
+  </div>
+</div>
+{% endblock %}
