@@ -1,7 +1,7 @@
 // Node.js core dependencies
 const path = require('path')
 
-// Npm dependencies
+// NPM dependencies
 const express = require('express')
 const favicon = require('serve-favicon')
 const bodyParser = require('body-parser')
@@ -11,6 +11,8 @@ const argv = require('minimist')(process.argv.slice(2))
 const staticify = require('staticify')(path.join(__dirname, 'public'))
 const compression = require('compression')
 const nunjucks = require('nunjucks')
+const cookieSession = require('cookie-session')
+const flash = require('connect-flash')
 
 // Local dependencies
 const router = require('./app/router')
@@ -50,6 +52,7 @@ function initialiseGlobalMiddleware (app) {
   })
   app.use(bodyParser.json())
   app.use(bodyParser.urlencoded({ extended: true }))
+  app.use(flash())
 
   app.use('*', correlationHeader)
 }
@@ -91,6 +94,14 @@ function initialisePublic (app) {
   app.use('/', express.static(path.join(__dirname, '/node_modules/govuk-frontend/')))
 }
 
+function initialiseClientSessions(app) {
+  app.use(cookieSession({
+    name: 'pay-user-support-service-cookies',
+    keys: [ 'secret-cryptographically-secure' ],
+    maxAge: '24h'
+  }))
+}
+
 function initialiseRoutes (app) {
   router.bind(app)
 }
@@ -108,7 +119,9 @@ function listen () {
 function initialise () {
   const app = unconfiguredApp
   app.disable('x-powered-by')
+  app.set('trust proxy', 1) // trust first proxy
   initialiseProxy(app)
+  initialiseClientSessions(app)
   initialiseGlobalMiddleware(app)
   initialiseTemplateEngine(app)
   initialiseRoutes(app)
