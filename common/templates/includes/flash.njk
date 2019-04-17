@@ -1,0 +1,28 @@
+{% from "components/error-summary/macro.njk" import govukErrorSummary %}
+
+{% if error[0].summary %}
+  {{
+    govukErrorSummary({
+      titleText: "There was a problem with the details you gave for:",
+      errorList: error[0].summary
+    })
+  }}
+{% endif %}
+
+{% if error[0].message %}
+  {{
+    govukErrorSummary({
+      titleText: error[0].message
+    })
+  }}
+{% endif %}
+
+{% if info %}
+  <div class="info-box info-box--success">
+    <h2 class="govuk-heading-m">{{ info[0].title }}</h2>
+    {% if info.body %}
+      <p class="govuk-body">{{ info[0].body }}</p>
+    {% endif %}
+  </div>
+{% endif %}
+
