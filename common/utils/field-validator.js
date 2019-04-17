@@ -1,3 +1,5 @@
+'use strict'
+
 // The validator expects to be passed an array of objects like so
 // [
 //   {
@@ -11,7 +13,7 @@
 //   }
 // ]
 
-'use strict'
+const { validEmail, isNotEmpty } = require('./field-validations')
 
 const validator = function validator (arrayOfFields) {
   let errors = []
@@ -52,18 +54,6 @@ const validator = function validator (arrayOfFields) {
   }
 
   return false
-}
-
-const isNotEmpty = function isNotEmpty (field) {
-  if (field.value) {
-    return field.value.trim() !== ''
-  } else {
-    return false
-  }
-}
-
-const validEmail = function validEmail (field) {
-  return field.value !== ''
 }
 
 module.exports = {
