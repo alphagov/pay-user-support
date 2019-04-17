@@ -1,0 +1,79 @@
+{% extends "common/templates/layout.njk" %}
+{% from "components/inset-text/macro.njk" import govukInsetText %}
+{% from "components/textarea/macro.njk" import govukTextarea %}
+{% from "components/input/macro.njk" import govukInput %}
+{% from "components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+  Support - GOV.UK Pay
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+      Report a problem with my live service
+    </h1>
+
+    {{
+      govukInsetText({
+        html: "Check our <a href='https://payments.statuspage.io/'>system status page</a> to see if there are any known issues with GOV.UK Pay."
+      })
+    }}
+    
+    <form method="post" action="/" >
+      {{
+        govukTextarea({
+          name: "problem",
+          id: "problem",
+          rows: "8",
+          label: {
+            text: "Describe the problem"
+          },
+          hint: {
+            text: "Do not include personal or financial information, passwords or payment card details."
+          }
+        })
+      }}
+
+      {{
+        govukInput({
+          label: {
+            text: "Name"
+          },
+          id: "name",
+          name: "name"
+        })
+      }}
+
+      {{
+        govukInput({
+          label: {
+            text: "Email"
+          },
+          id: "email",
+          name: "email",
+          type: "email"
+        })
+      }}
+
+      {{
+        govukButton({
+          text: "Submit"
+        })
+      }}
+    </form>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-4">Read our documentation</h3>
+    <p class="govuk-body">The <a class="govuk-link" href="https://docs.payments.service.gov.uk/#gov-uk-pay-documentation">GOV.UK Pay documentation</a> includes guidance on:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a class="govuk-link" href="https://docs.payments.service.gov.uk/troubleshooting/#troubleshooting">troubleshooting</a> common problems</li>
+      <li><a class="govuk-link" href="https://docs.payments.service.gov.uk/api_reference/#api-error-codes">API error codes</a></li>
+      <li><a class="govuk-link" href="https://docs.payments.service.gov.uk/support_contact_and_more_information/#incident-severity">how we classify support incidents</a></li>
+      <li>our <a class="govuk-link" href="https://docs.payments.service.gov.uk/support_contact_and_more_information/#hours-of-service">hours of service</a></li>
+    </ul>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "common/templates/layout.njk" %}
+{% from "components/inset-text/macro.njk" import govukInsetText %}
+{% from "components/textarea/macro.njk" import govukTextarea %}
+{% from "components/input/macro.njk" import govukInput %}
+{% from "components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+  Support - GOV.UK Pay
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+      Help using GOV.UK Pay
+    </h1>
+
+    {{
+      govukInsetText({
+        html: "<a href='https://docs.payments.service.gov.uk/'>Read our documentation</a> to see if our guidance answers your questions."
+      })
+    }}
+    
+    <form method="post" action="/" >
+      {{
+        govukTextarea({
+          name: "help",
+          id: "help",
+          rows: "8",
+          label: {
+            text: "Describe what you’re trying to do"
+          },
+          hint: {
+            text: "Do not include personal or financial information, passwords or payment card details."
+          }
+        })
+      }}
+
+      {{
+        govukInput({
+          label: {
+            text: "Name"
+          },
+          id: "name",
+          name: "name"
+        })
+      }}
+
+      {{
+        govukInput({
+          label: {
+            text: "Email"
+          },
+          id: "email",
+          name: "email",
+          type: "email"
+        })
+      }}
+
+      {{
+        govukButton({
+          text: "Submit"
+        })
+      }}
+    </form>
+  </div>
+</div>
+{% endblock %}
