@@ -13,11 +13,12 @@
       Support
     </h1>
     <p class="govuk-body-l">GOV.UK Pay provides 24-hour support for live accounts.</p>
-    
+
     <form method="post" action="/" >
       {{
         govukRadios({
           name: "support-type",
+          id: "support-type",
           fieldset: {
             legend: {
               text: "How can we help you?",
@@ -33,7 +34,8 @@
               value: "help",
               text: "I need help using GOV.UK Pay"
             }
-          ]
+          ],
+          errorMessage: error[0].fields['support-type'].message
         })
       }}
       {{
