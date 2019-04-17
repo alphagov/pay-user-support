@@ -1,30 +1,11 @@
-# GDS Node.js boilerplate
+# GOV.UK Pay User Support
 
-This is a skeleton Node.js app running on [Express] with [Nunjucks] as a template engine.
+This is a small app that contains a bunch of forms that get info from users and direct the query to the right place.
 
-It includes:
-- Grunt for compliation of sass/js
-- [GOV.UK Frontend]
-- [Browserify] with babelify and Nunjucksify
-- Mocha for testing
-- Middleware to set correlation headers
-- i18n language support
-- [Snyk]
-- [StandardJS] for linting
+It’s a Node.js [Express] app and uses [GOV.UK Frontend]
 
-To get started clone the repo and run 
-
-``` bash
-$ npm install
-$ npm start
-```
-(`npm install` might error about Snyk if it’s not set up but ignore for now)
-
-Then go to [http://localhost:3000/](http://localhost:3000/) to see it in action.
+Based on [GDS Node.js Starter]
 
 [Express]: https://expressjs.com/
-[Nunjucks]: https://mozilla.github.io/nunjucks/
-[Snyk]: https://snyk.io/
 [GOV.UK Frontend]: https://design-system.service.gov.uk/
-[Browserify]: http://browserify.org/
-[StandardJS]: https://standardjs.com/
+[GDS Node.js Starter]: https://github.com/alphagov/gds-nodejs-boilerplate
