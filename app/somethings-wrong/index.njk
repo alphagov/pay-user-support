@@ -20,12 +20,12 @@
         html: "Check our <a href='https://payments.statuspage.io/'>system status page</a> to see if there are any known issues with GOV.UK Pay."
       })
     }}
-    
-    <form method="post" action="/" >
+
+    <form method="post">
       {{
         govukTextarea({
-          name: "problem",
-          id: "problem",
+          name: "message",
+          id: "message",
           rows: "8",
           label: {
             text: "Describe the problem"
@@ -42,7 +42,8 @@
             text: "Name"
           },
           id: "name",
-          name: "name"
+          name: "name",
+          errorMessage: error[0].fields.name.message
         })
       }}
 
@@ -53,7 +54,8 @@
           },
           id: "email",
           name: "email",
-          type: "email"
+          type: "email",
+          errorMessage: error[0].fields.email.message
         })
       }}
 
