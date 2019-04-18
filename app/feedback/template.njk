@@ -24,12 +24,13 @@
     <form method="post">
       {{
         govukTextarea({
-          name: "feedback",
-          id: "feedback",
+          name: "message",
+          id: "message",
           rows: "8",
           label: {
             text: "Enter your message"
-          }
+          },
+          errorMessage: error[0].fields.message.message
         })
       }}
 
