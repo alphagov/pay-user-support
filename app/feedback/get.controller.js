@@ -1,5 +1,5 @@
 'use strict'
 
 module.exports = (req, res) => {
-  res.render('app/feedback/index')
+  res.render('app/feedback/template')
 }
