@@ -9,11 +9,15 @@ const { validator } = require('../../common/utils/field-validator')
 // const { paths } = require('./index') this isn’t working and I can’t work it out
 
 module.exports = (req, res) => {
+  const formattedMessage = `_Message submitted via GOV.UK Pay Support pages_
+  ----
+  ${req.body['message']}`
+
   const ticket = {
     email: req.body['email'],
     name: req.body['name'],
     subject: '[govuk-pay-support] Report a problem with my live service',
-    message: req.body['message'],
+    message: formattedMessage,
     type: 'question'
   }
 
