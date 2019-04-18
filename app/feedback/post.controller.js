@@ -14,8 +14,8 @@ module.exports = (req, res) => {
   ${req.body['message']}`
 
   const ticket = {
-    email: req.body['email'],
-    name: req.body['name'],
+    email: req.body['email'].length < 1 ? 'anonymous@example.com' : req.body['email'],
+    name: req.body['name'].length < 1 ? 'Anonymous' : req.body['name'],
     subject: '[govuk-pay-support] Ask a question or give feedback ',
     message: formattedMessage,
     type: 'question'
