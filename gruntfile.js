@@ -71,26 +71,6 @@ module.exports = function (grunt) {
     }
   }
 
-  const nodemon = {
-    dev: {
-      script: 'server.js',
-      options: {
-        ext: 'js',
-        ignore: ['node_modules/**', 'common/assets/**', 'public/**'],
-        args: ['-i=true']
-      }
-    }
-  }
-
-  const concurrent = {
-    target: {
-      tasks: ['watch', 'nodemon'],
-      options: {
-        logConcurrentOutput: true
-      }
-    }
-  }
-
   const concat = {
     options: {
       separator: ';'
@@ -136,8 +116,6 @@ module.exports = function (grunt) {
     watch,
     browserify,
     babel,
-    nodemon,
-    concurrent,
     cssmin,
     concat,
     rewrite,
@@ -150,8 +128,6 @@ module.exports = function (grunt) {
     'grunt-contrib-watch',
     'grunt-contrib-clean',
     'grunt-sass',
-    'grunt-nodemon',
-    'grunt-concurrent',
     'grunt-browserify',
     'grunt-contrib-concat',
     'grunt-rewrite',
@@ -172,16 +148,4 @@ module.exports = function (grunt) {
   ])
 
   grunt.registerTask('default', ['generate-assets', 'concurrent:target'])
-
-  /**
-   * On watch, copy the asset that was changed, not all of them
-   */
-  grunt.event.on('watch', (action, filepath, target) => {
-    if (target === 'assets') {
-      grunt.config(
-        'copy.assets.files.0.src',
-        filepath.replace('common/assets/', '')
-      )
-    }
-  })
 }
