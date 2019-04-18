@@ -9,6 +9,10 @@
   {% include "common/templates/includes/head.njk" %}
 {% endblock %}
 
+{% block header %}
+  {% include "common/templates/includes/header.njk" %}
+{% endblock %}
+
 {% block beforeContent %}
   {{
     govukBreadcrumbs({
@@ -39,4 +43,8 @@
       }
     })
   }}
+{% endblock %}
+
+{% block bodyEnd %}
+  {% include "common/templates/includes/scripts.njk" %}
 {% endblock %}

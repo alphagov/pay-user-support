@@ -94,7 +94,7 @@ function initialisePublic (app) {
   app.use('/', express.static(path.join(__dirname, '/node_modules/govuk-frontend/')))
 }
 
-function initialiseClientSessions(app) {
+function initialiseClientSessions (app) {
   app.use(cookieSession({
     name: 'pay-user-support-service-cookies',
     keys: [ 'secret-cryptographically-secure' ],
