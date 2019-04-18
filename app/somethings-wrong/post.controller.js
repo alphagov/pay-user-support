@@ -12,7 +12,7 @@ module.exports = (req, res) => {
   const ticket = {
     email: req.body['email'],
     name: req.body['name'],
-    subject: 'Support submission: Report a problem with my live service',
+    subject: '[govuk-pay-support] Report a problem with my live service',
     message: req.body['message'],
     type: 'question'
   }
@@ -49,7 +49,7 @@ module.exports = (req, res) => {
 
   if (errors) {
     req.flash('error', errors)
-    return res.redirect('/somthings-wrong') // Embarrassing use of string cos import at top not working for no good reason
+    return res.redirect('/somethings-wrong') // Embarrassing use of string cos import at top not working for no good reason
   }
 
   zendesk.createTicket(ticket)
@@ -58,7 +58,7 @@ module.exports = (req, res) => {
       req.flash('info', {
         title: 'Thanks for your feedback'
       })
-      return res.redirect('/somthings-wrong') // Embarrassing use of string cos import at top not working for no good reason
+      return res.redirect('/somethings-wrong') // Embarrassing use of string cos import at top not working for no good reason
     })
     .catch(err => {
       console.log('fail')
@@ -66,6 +66,6 @@ module.exports = (req, res) => {
       req.flash('error', {
         message: 'We couldn’t send your feedback, please try again'
       })
-      return res.redirect('/somthings-wrong') // Embarrassing use of string cos import at top not working for no good reason
+      return res.redirect('/somethings-wrong') // Embarrassing use of string cos import at top not working for no good reason
     })
 }

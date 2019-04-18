@@ -12,7 +12,7 @@ module.exports = (req, res) => {
   const ticket = {
     email: req.body['email'],
     name: req.body['name'],
-    subject: 'Support submission: I need help using GOV.UK Pay',
+    subject: '[govuk-pay-support] I need help using GOV.UK Pay',
     message: req.body['message'],
     type: 'question'
   }
