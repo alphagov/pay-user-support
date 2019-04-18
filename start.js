@@ -2,7 +2,7 @@
 
 const path = require('path')
 const fs = require('fs')
-const logger = require('pino')()
+const logger = require('winston')
 const throng = require('throng')
 const server = require('./server')
 

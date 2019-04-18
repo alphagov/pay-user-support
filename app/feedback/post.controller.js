@@ -1,7 +1,7 @@
 'use strict'
 
 // NPM dependencies
-const logger = require('pino')
+const logger = require('winston')
 
 // Local dependencies
 const zendesk = require('../../common/clients/zendesk')
@@ -49,7 +49,7 @@ module.exports = (req, res) => {
     })
     .catch(err => {
       console.log('fail')
-      logger('error', `Error posting request to Zendesk - ${err}`)
+      logger.error(`Error posting request to Zendesk - ${err}`)
       req.flash('error', {
         message: 'We couldn’t send your feedback, please try again'
       })

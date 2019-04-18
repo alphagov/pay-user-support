@@ -2,7 +2,7 @@
 
 // NPM dependencies
 const zendesk = require('node-zendesk')
-const logger = require('pino')
+const logger = require('winston')
 
 const zendeskConfig = require('../config/zendesk')
 
@@ -33,7 +33,7 @@ module.exports = {
         }
       }, (err, request, result) => {
         if (err) {
-          logger('error', `${opts.correlationId} there was an error creating Zendesk ticket: ${err}`)
+          logger.error(`${opts.correlationId} there was an error creating Zendesk ticket: ${err}`)
           reject(new Error(`Something went wrong, please contact support team.`))
         }
         resolve()
