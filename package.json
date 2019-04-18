@@ -32,6 +32,7 @@
     "node-zendesk": "^1.4.0",
     "nunjucks": "^3.2.0",
     "pino": "^5.12.2",
+    "rfc822-validate": "^1.0.0",
     "serve-favicon": "^2.5.0",
     "staticify": "^3.3.1",
     "throng": "4.0.x"
