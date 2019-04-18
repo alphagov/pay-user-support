@@ -28,6 +28,18 @@
       "public/js/*"
     ]
   },
+  "standard": {
+    "globals": [
+      "describe",
+      "before",
+      "beforeEach",
+      "after",
+      "afterEach",
+      "it",
+      "cy",
+      "Cypress"
+    ]
+  },
   "dependencies": {
     "body-parser": "1.18.x",
     "compression": "^1.7.4",
