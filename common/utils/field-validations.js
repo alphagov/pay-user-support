@@ -5,8 +5,6 @@ const rfc822Validator = require('rfc822-validate')
 const isNotEmpty = function isNotEmpty (field) {
   if (field.value) {
     return field.value.trim() !== ''
-  } else {
-    return false
   }
 }
 
