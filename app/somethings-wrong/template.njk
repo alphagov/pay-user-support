@@ -44,7 +44,10 @@
           },
           id: "name",
           name: "name",
-          errorMessage: error[0].fields.name.message
+          errorMessage: error[0].fields.name.message,
+          attributes: {
+            autocomplete: "name"
+          }
         })
       }}
 
@@ -56,7 +59,10 @@
           id: "email",
           name: "email",
           type: "email",
-          errorMessage: error[0].fields.email.message
+          errorMessage: error[0].fields.email.message,
+          attributes: {
+            autocomplete: "email"
+          }
         })
       }}
 
