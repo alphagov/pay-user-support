@@ -6,7 +6,7 @@ const logger = require('pino')
 // Local dependencies
 const zendesk = require('../../common/clients/zendesk')
 const { validator } = require('../../common/utils/field-validator')
-// const { paths } = require('./index.js')
+// const { paths } = require('./index') this isn’t working and I can’t work it out
 
 module.exports = (req, res) => {
   const ticket = {
@@ -49,7 +49,7 @@ module.exports = (req, res) => {
 
   if (errors) {
     req.flash('error', errors)
-    return res.redirect('/somethings-wrong')
+    return res.redirect('/somthings-wrong') // Embarrassing use of string cos import at top not working for no good reason
   }
 
   zendesk.createTicket(ticket)
@@ -58,7 +58,7 @@ module.exports = (req, res) => {
       req.flash('info', {
         title: 'Thanks for your feedback'
       })
-      return res.redirect('/somethings-wrong')
+      return res.redirect('/somthings-wrong') // Embarrassing use of string cos import at top not working for no good reason
     })
     .catch(err => {
       console.log('fail')
@@ -66,6 +66,6 @@ module.exports = (req, res) => {
       req.flash('error', {
         message: 'We couldn’t send your feedback, please try again'
       })
-      return res.redirect('/somethings-wrong')
+      return res.redirect('/somthings-wrong') // Embarrassing use of string cos import at top not working for no good reason
     })
 }
