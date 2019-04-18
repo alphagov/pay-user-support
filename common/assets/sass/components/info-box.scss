@@ -1,0 +1,19 @@
+.info-box {
+  @extend .govuk-error-summary;
+
+  &--good {
+    border-color:  govuk-colour("green");
+  }
+
+  &--warning {
+    border-color:  govuk-colour("yellow");
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
