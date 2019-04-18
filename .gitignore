@@ -61,5 +61,8 @@ typings/
 govuk_modules/
 public/
 
-
 .DS_Store
+
+# Cypress test stuff
+test/screenshots/
+test/videos/

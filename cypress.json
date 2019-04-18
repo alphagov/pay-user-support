@@ -1,10 +1,10 @@
 {
-  "baseUrl": "http://localhost:3000",
+  "baseUrl": "http://gds6122.local:3000",
   "viewportHeight": 800,
   "viewportWidth": 1200,
-  "integrationFolder": "tests/integration",
-  "pluginsFile": "tests/plugins",
-  "supportFile": "tests/support",
-  "screenshotsFolder": "tests/screenshots",
-  "videosFolder": "tests/videos"
+  "integrationFolder": "test/integration",
+  "pluginsFile": "test/plugins",
+  "supportFile": "test/support",
+  "screenshotsFolder": "test/screenshots",
+  "videosFolder": "test/videos"
 }
