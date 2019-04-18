@@ -11,32 +11,22 @@ module.exports = function (grunt) {
         includePaths: [
           'node_modules'
         ],
-        outputStyle: 'expanded'
+        outputStyle: 'compressed'
       },
       files: [{
         expand: true,
         cwd: 'common/assets/sass',
         src: ['*.scss', 'custom/*.scss'],
         dest: 'public/stylesheets/',
-        ext: '.css'
+        ext: '.min.css'
       }]
-    }
-  }
-
-  const cssmin = {
-    target: {
-      files: {
-        'public/stylesheets/application.min.css': [
-          'public/stylesheets/application.css'
-        ]
-      }
     }
   }
 
   const watch = {
     css: {
       files: ['common/assets/sass/**/*.scss'],
-      tasks: ['sass', 'cssmin'],
+      tasks: ['sass'],
       options: {
         spawn: false,
         livereload: true
@@ -48,40 +38,6 @@ module.exports = function (grunt) {
       options: {
         spawn: false
       }
-    }
-  }
-
-  const browserify = {
-    'public/javascripts/browsered.js': ['common/browsered/index.js'],
-    options: {
-      browserifyOptions: {
-        standalone: 'module'
-      }
-    }
-  }
-
-  const babel = {
-    options: {
-      presets: ['@babel/preset-env']
-    },
-    dist: {
-      files: {
-        'public/javascripts/browsered.js': 'public/javascripts/browsered.js'
-      }
-    }
-  }
-
-  const concat = {
-    options: {
-      separator: ';'
-    },
-    dist: {
-      src: [
-        'public/javascripts/browsered.js',
-        'common/assets/javascripts/base/*.js',
-        'common/assets/javascripts/modules/*.js'
-      ],
-      dest: 'public/javascripts/application.js'
     }
   }
 
@@ -114,10 +70,6 @@ module.exports = function (grunt) {
     clean: ['public', 'govuk_modules'],
     sass,
     watch,
-    browserify,
-    babel,
-    cssmin,
-    concat,
     rewrite,
     compress
   });
@@ -128,10 +80,7 @@ module.exports = function (grunt) {
     'grunt-contrib-watch',
     'grunt-contrib-clean',
     'grunt-sass',
-    'grunt-browserify',
-    'grunt-contrib-concat',
-    'grunt-rewrite',
-    'grunt-babel'
+    'grunt-rewrite'
   ].forEach(task => {
     grunt.loadNpmTasks(task)
   })
@@ -139,12 +88,8 @@ module.exports = function (grunt) {
   grunt.registerTask('generate-assets', [
     'clean',
     'sass',
-    'browserify',
-    'babel',
-    'concat',
     'rewrite',
-    'compress',
-    'cssmin'
+    'compress'
   ])
 
   grunt.registerTask('default', ['generate-assets', 'concurrent:target'])
