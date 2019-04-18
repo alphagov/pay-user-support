@@ -51,6 +51,14 @@ module.exports = function (grunt) {
     }
   }
 
+  const uglify = {
+    my_target: {
+      files: {
+        'public/js/application.min.js': ['node_modules/govuk-frontend/all.js']
+      }
+    }
+  }
+
   const compress = {
     main: {
       options: {
@@ -71,16 +79,17 @@ module.exports = function (grunt) {
     sass,
     watch,
     rewrite,
+    uglify,
     compress
   });
 
   [
-    'grunt-contrib-cssmin',
     'grunt-contrib-compress',
     'grunt-contrib-watch',
     'grunt-contrib-clean',
     'grunt-sass',
-    'grunt-rewrite'
+    'grunt-rewrite',
+    'grunt-contrib-uglify'
   ].forEach(task => {
     grunt.loadNpmTasks(task)
   })
@@ -89,6 +98,7 @@ module.exports = function (grunt) {
     'clean',
     'sass',
     'rewrite',
+    'uglify',
     'compress'
   ])
 
