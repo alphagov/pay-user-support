@@ -32,7 +32,8 @@
           },
           hint: {
             text: "Do not include personal or financial information, passwords or payment card details."
-          }
+          },
+          errorMessage: error[0].fields.message.message
         })
       }}
 
@@ -42,7 +43,8 @@
             text: "Name"
           },
           id: "name",
-          name: "name"
+          name: "name",
+          errorMessage: error[0].fields.name.message
         })
       }}
 
@@ -53,7 +55,8 @@
           },
           id: "email",
           name: "email",
-          type: "email"
+          type: "email",
+          errorMessage: error[0].fields.email.message
         })
       }}
 

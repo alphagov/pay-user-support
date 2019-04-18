@@ -1,5 +1,5 @@
 'use strict'
 
 module.exports = (req, res) => {
-  res.render('app/help/template')
+  res.render('app/help/template', req.flash())
 }
