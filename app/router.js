@@ -16,6 +16,7 @@ const paymentLinks = require('./payment-links')
 const getStarted = require('./get-started')
 const privacy = require('./privacy')
 const cookies = require('./cookies')
+const blueBadgeScheme = require('./blue-badge-scheme')
 
 // Export
 module.exports.bind = app => {
@@ -34,4 +35,5 @@ module.exports.bind = app => {
   app.use(getStarted.router)
   app.use(privacy.router)
   app.use(cookies.router)
+  app.use(blueBadgeScheme.router)
 }
