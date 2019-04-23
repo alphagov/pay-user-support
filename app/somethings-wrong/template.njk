@@ -33,6 +33,7 @@
           hint: {
             text: "Do not include personal or financial information, passwords or payment card details."
           },
+          value: session.message,
           errorMessage: error[0].fields.message.message
         })
       }}
@@ -45,6 +46,7 @@
           id: "name",
           name: "name",
           errorMessage: error[0].fields.name.message,
+          value: session.name,
           attributes: {
             autocomplete: "name"
           }
@@ -59,6 +61,7 @@
           id: "email",
           name: "email",
           type: "email",
+          value: session.email,
           errorMessage: error[0].fields.email.message,
           attributes: {
             autocomplete: "email"
