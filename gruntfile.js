@@ -31,6 +31,13 @@ module.exports = function (grunt) {
         spawn: false,
         livereload: true
       }
+    },
+    templates: {
+      files: ['**/*.njk'],
+      options: {
+        spawn: false,
+        livereload: true
+      }
     }
   }
 
