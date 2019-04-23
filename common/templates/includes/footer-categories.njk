@@ -1,0 +1,55 @@
+<div class="govuk-footer__navigation" data-click-events data-click-category="Footer" data-click-action="Navigation link clicked">
+  <div class="govuk-footer__section">
+    <h2 class="govuk-footer__heading govuk-heading-m">About</h2>
+    <ul class="govuk-footer__list">
+      <li class="govuk-footer__list-item">
+        <a class="govuk-footer__link" href="/get-started">Get started</a>
+      </li>
+      <li class="govuk-footer__list-item">
+        <a class="govuk-footer__link" href="/features">Features</a>
+      </li>
+      <li class="govuk-footer__list-item">
+        <a class="govuk-footer__link" href="/roadmap">Roadmap</a>
+      </li>
+      <li class="govuk-footer__list-item">
+        <a class="govuk-footer__link" href="https://www.gov.uk/performance/govuk-pay">Performance</a>
+      </li>
+      <li class="govuk-footer__list-item">
+        <a class="govuk-footer__link" href="https://docs.google.com/forms/d/e/1FAIpQLSdJRj0asGOu3VJZ-0UPmx0T6w7FMsdduRAS51k18TS2XlNC7w/viewform">Newsletter</a>
+      </li>
+    </ul>
+  </div>
+  <div class="govuk-footer__section">
+    <h2 class="govuk-footer__heading govuk-heading-m">Support</h2>
+    <ul class="govuk-footer__list">
+      <li class="govuk-footer__list-item">
+        <a class="govuk-footer__link" href="https://ukgovernmentdigital.slack.com/messages/govuk-pay">Chat with GOV.UK Pay on Slack</a>
+      </li>
+      <li class="govuk-footer__list-item">
+        <a class="govuk-footer__link" href="https://docs.payments.service.gov.uk">Documentation</a>
+      </li>
+      <li class="govuk-footer__list-item">
+        <a class="govuk-footer__link" href="https://payments.statuspage.io/">System status</a>
+      </li>
+      <li class="govuk-footer__list-item">
+        <a class="govuk-footer__link" href="/support">Support</a>
+      </li>
+    </ul>
+  </div>
+  {% if loggedIn %}
+  <div class="govuk-footer__section">
+    <h2 class="govuk-footer__heading govuk-heading-m">Legal Terms</h2>
+    <ul class="govuk-footer__list">
+      <li class="govuk-footer__list-item">
+        <a class="govuk-footer__link" href="/policy/download/memorandum-of-understanding-for-crown-bodies">Memorandum of understanding for Crown bodies</a>
+      </li>
+      <li class="govuk-footer__list-item">
+        <a class="govuk-footer__link" href="/policy/download/contract-for-non-crown-bodies">Contract for non-Crown bodies</a>
+      </li>
+      <li class="govuk-footer__list-item">
+        <a class="govuk-footer__link" href="/policy/download/stripe-connected-account-agreement">Stripe Connected Account Agreement</a>
+      </li>
+    </ul>
+  </div>
+  {% endif %}
+</div>

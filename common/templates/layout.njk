@@ -3,7 +3,7 @@
 
 {% extends "template.njk" %}
 
-{% block pageTitle %}GDS Node.js boilerplate{% endblock %}
+{% block pageTitle %}GOV.UK Pay{% endblock %}
 
 {% block head %}
   {% include "common/templates/includes/head.njk" %}
@@ -14,13 +14,7 @@
 {% endblock %}
 
 {% block footer %}
-  {{
-    govukFooter({
-      meta: {
-        html: 'Built by the <a href="#" class="govuk-footer__link">Government Digital Service</a>'
-      }
-    })
-  }}
+  {% include "common/templates/includes/footer.njk" %}
 {% endblock %}
 
 {% block bodyEnd %}
