@@ -32,11 +32,11 @@ module.exports = function (grunt) {
         livereload: true
       }
     },
-    assets: {
-      files: ['common/assets/**/*', '!common/assets/sass/**'],
-      tasks: ['copy:assets'],
+    templates: {
+      files: ['**/*.njk'],
       options: {
-        spawn: false
+        spawn: false,
+        livereload: true
       }
     }
   }

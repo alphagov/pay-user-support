@@ -87,10 +87,8 @@ function initialiseTemplateEngine (app) {
 }
 
 function initialisePublic (app) {
-  app.use('/javascripts', express.static(path.join(__dirname, '/public/assets/javascripts'), publicCaching))
-  app.use('/images', express.static(path.join(__dirname, '/public/images'), publicCaching))
-  app.use('/stylesheets', express.static(path.join(__dirname, '/public/assets/stylesheets'), publicCaching))
-  app.use('/public', express.static(path.join(__dirname, '/public')))
+  app.use('/public/images', express.static(path.join(__dirname, '/common/assets/images'), publicCaching))
+  app.use('/public', express.static(path.join(__dirname, '/public'), publicCaching))
   app.use('/', express.static(path.join(__dirname, '/node_modules/govuk-frontend/')))
 }
 

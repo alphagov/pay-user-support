@@ -1,0 +1,102 @@
+{% extends "common/templates/layout.njk" %}
+{% from "components/inset-text/macro.njk" import govukInsetText %}
+  {% from "common/templates/macros/sub-navigation.njk" import subNavigation %}
+
+{% block pageTitle %}
+  Security - GOV.UK Pay
+{% endblock %}
+
+{% block beforeContent %}
+  {{
+    govukBreadcrumbs({
+      items: [
+        {
+          text: "GOV.UK Services",
+          href: "https://www.gov.uk/service-toolkit#gov-uk-services"
+        },
+        {
+          text: "GOV.UK Pay",
+          href: "https://www.payments.service.gov.uk/"
+        },
+        {
+          text: "Security",
+          href: "/security"
+        }
+      ]
+    })
+  }}
+  {% include "common/templates/includes/flash.njk" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  {{
+    subNavigation([
+      {
+        name: 'Features',
+        href: '/features'
+      },
+      {
+        name: 'Roadmap',
+        href: '/roadmap'
+      },
+      {
+        name: 'Security',
+        href: '/security',
+        active: true
+      },
+      {
+        name: 'GOV.UK Pay’s Payment Service Provider',
+        href: '/payment-service-provider'
+      },
+      {
+        name: 'Direct Debit on GOV.UK Pay',
+        href: '/direct-debit'
+      },
+      {
+        name: 'Payment links',
+        href: '/payment-links'
+      }
+    ])
+  }}
+
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Security</h1>
+    <p class="govuk-body">GOV.UK Pay is a secure online payments system.</p>
+    <p class="govuk-body">GOV.UK Pay provides a safe and Payment Card Industry (PCI) compliant platform to process card payments.</p>
+
+    <h2 class="govuk-heading-s">PCI compliance</h2>
+    <p class="govuk-body">GOV.UK Pay is certified as a level 1 service provider with the Payment Card Industry Data Security Standard (PCI DSS) version 3.2. The PCI DSS provides guidance to help maintain payment  security.</p>
+    <p class="govuk-body"><a class="govuk-link" href="https://docs.payments.service.gov.uk/security/#payment-card-industry-pci-compliance" data-click-events data-click-category="Content" data-click-action="External link clicked">More information about PCI compliance is available in our technical documentation</a></p>
+
+    <h2 class="govuk-heading-s">Government security guidelines</h2>
+
+    <p class="govuk-body">GOV.UK Pay supports the <a class="govuk-link" href="https://www.gov.uk/service-manual/technology/using-https" data-click-events data-click-category="Content" data-click-action="External link clicked">government HTTPS security guidelines</a>.</p>
+    <p class="govuk-body">HTTPS protects information from being intercepted by malicious third parties as it travels over the internet. Using HTTPS ensures our connections on GOV.UK Pay are secure.</p>
+    <p class="govuk-body">GOV.UK Pay also supports all the mandatory requirements for Government ICT systems and services.</p>
+
+    <h2 class="govuk-heading-s">Testing GOV.UK Pay</h2>
+    <p class="govuk-body">The GOV.UK Pay environment is regularly tested by independent suppliers.</p>
+    <p class="govuk-body">This includes:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>at least one annual IT Health Check</li>
+      <li>Internal and external vulnerability scanning</li>
+    </ul>
+    <p class="govuk-body">GOV.UK Pay is independently assessed for its PCI DSS compliance.</p>
+    
+    <h2 class="govuk-heading-s">Cloud Security Principles</h2>
+    <p class="govuk-body">GOV.UK Pay has implemented the <a class="govuk-link" href="https://www.ncsc.gov.uk/collection/cloud-security?curPage=/collection/cloud-security/implementing-the-cloud-security-principles">Cloud Security Principles</a>.</p>
+
+    <h2 class="govuk-heading-s">GOV.UK Service Manual</h2>
+    <p class="govuk-body">GDS services follow the standards described in the <a  class="govuk-link" href="https://www.gov.uk/service-manual">GOV.UK Service Manual</a>.</p>
+
+    <p class="govuk-body">The standards describe the best way to build and run a service and include advice about:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>accessibility and assisted digital</li>
+      <li>agile delivery</li>
+      <li>design</li>
+      <li>technology</li>
+    </ul>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,116 @@
+{% extends "common/templates/layout.njk" %}
+{% from "components/inset-text/macro.njk" import govukInsetText %}
+{% from "common/templates/macros/sub-navigation.njk" import subNavigation %}
+
+{% block pageTitle %}
+  Features - GOV.UK Pay
+{% endblock %}
+
+{% block beforeContent %}
+  {{
+    govukBreadcrumbs({
+      items: [
+        {
+          text: "GOV.UK Services",
+          href: "https://www.gov.uk/service-toolkit#gov-uk-services"
+        },
+        {
+          text: "GOV.UK Pay",
+          href: "https://www.payments.service.gov.uk/"
+        },
+        {
+          text: "Roadmap",
+          href: "/roadmap"
+        }
+      ]
+    })
+  }}
+  {% include "common/templates/includes/flash.njk" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  {{
+    subNavigation([
+      {
+        name: 'Features',
+        href: '/features'
+      },
+      {
+        name: 'Roadmap',
+        href: '/roadmap',
+        active: true
+      },
+      {
+        name: 'Security',
+        href: '/security'
+      },
+      {
+        name: 'GOV.UK Pay’s Payment Service Provider',
+        href: '/payment-service-provider'
+      },
+      {
+        name: 'Direct Debit on GOV.UK Pay',
+        href: '/direct-debit'
+      },
+      {
+        name: 'Payment links',
+        href: '/payment-links'
+      }
+    ])
+  }}
+
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Roadmap</h1>
+    <p class="govuk-body">Here’s a list of the new functionality we’re planning to offer through GOV.UK&nbsp;Pay.</p>
+
+    {{
+      govukInsetText({
+        text: "This roadmap is only a guide and may change. We work in 3-monthly cycles."
+      })
+    }}
+
+    <h2 class="govuk-heading-m">Recently released</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Support for <a class="govuk-link" href="https://docs.payments.service.gov.uk/optional_features/digital_wallets/#digital-wallets">Apple Pay and Google Pay</a></li>
+      <li>Apply custom branding to <a class="govuk-link" href="https://www.payments.service.gov.uk/payment-links/">payment links</a></li> 
+      <li>Payment links in Welsh</li> 
+      <li>Return Provider ID in API searches</li> 
+    </ul>
+
+    <h2 class="govuk-heading-m">April to June 2019</h2>
+    
+    <h3 class="govuk-heading-s">In progress</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Make it easier to reconcile transactions by using metadata</li> 
+      <li>Prepopulate transaction details</li>  
+    </ul>
+
+    <h3 class="govuk-heading-s">Coming next</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Launch Direct Debit service</li>
+    </ul>
+
+    <h2 class="govuk-heading-m">July to September 2019</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Support for 3D Secure 2.0</li>
+      <li>Improve conversion rates on our payment pages</li>
+      <li>Reporting for telephone payments</li>
+      <li>Transaction reporting across multiple services</li>
+      <li>Push reporting to services - webhooks for Direct Debit and card payments, scheduled CSVs delivered to a secure location</li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Later</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Recurring card payments</li>
+      <li>Scheduled Direct Debit</li>
+      <li>Telephone payments</li>
+      <li>Chip and pin payments</li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Get in touch</h2>
+    <p class="govuk-body"><a class="govuk-link" href="https://www.payments.service.gov.uk/support/">Let us know</a> if you have any questions, or there are other features you’d like us to develop.</p>
+    <p class="govuk-body"><a class="govuk-link" href="https://docs.google.com/forms/d/e/1FAIpQLSdJRj0asGOu3VJZ-0UPmx0T6w7FMsdduRAS51k18TS2XlNC7w/viewform">Sign up to the GOV.UK Pay newsletter</a> to find out more.</p>
+  </div>
+</div>
+{% endblock %}

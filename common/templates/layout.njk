@@ -13,28 +13,6 @@
   {% include "common/templates/includes/header.njk" %}
 {% endblock %}
 
-{% block beforeContent %}
-  {{
-    govukBreadcrumbs({
-      items: [
-        {
-          text: "GOV.UK Services",
-          href: "https://www.gov.uk/service-toolkit#gov-uk-services"
-        },
-        {
-          text: "GOV.UK Pay",
-          href: "https://www.payments.service.gov.uk/"
-        },
-        {
-          text: "Support",
-          href: "/"
-        }
-      ]
-    })
-  }}
-  {% include "common/templates/includes/flash.njk" %}
-{% endblock %}
-
 {% block footer %}
   {{
     govukFooter({

@@ -1,0 +1,106 @@
+{% extends "common/templates/layout.njk" %}
+{% from "components/inset-text/macro.njk" import govukInsetText %}
+  {% from "common/templates/macros/sub-navigation.njk" import subNavigation %}
+
+{% block pageTitle %}
+  GOV.UK Pay’s Payment Service Provider - GOV.UK Pay
+{% endblock %}
+
+{% block beforeContent %}
+  {{
+    govukBreadcrumbs({
+      items: [
+        {
+          text: "GOV.UK Services",
+          href: "https://www.gov.uk/service-toolkit#gov-uk-services"
+        },
+        {
+          text: "GOV.UK Pay",
+          href: "https://www.payments.service.gov.uk/"
+        },
+        {
+          text: "GOV.UK Pay’s Payment Service Provider",
+          href: "/payment-service-provider"
+        }
+      ]
+    })
+  }}
+  {% include "common/templates/includes/flash.njk" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  {{
+    subNavigation([
+      {
+        name: 'Features',
+        href: '/features'
+      },
+      {
+        name: 'Roadmap',
+        href: '/roadmap'
+      },
+      {
+        name: 'Security',
+        href: '/security'
+      },
+      {
+        name: 'GOV.UK Pay’s Payment Service Provider',
+        href: '/payment-service-provider',
+        active: true
+      },
+      {
+        name: 'Direct Debit on GOV.UK Pay',
+        href: '/direct-debit'
+      },
+      {
+        name: 'Payment links',
+        href: '/payment-links'
+      }
+    ])
+  }}
+
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">GOV.UK Pay’s Payment Service Provider</h1>
+    <p class="govuk-body">GOV.UK Pay takes payment, but uses a Payment Service Provider (PSP) to process it. GOV.UK Pay has procured a PSP for you to use. This means you don’t need a separate contract with a PSP to use GOV.UK Pay.</p>
+    <p class="govuk-body">If you already have your own PSP, GOV.UK Pay supports Worldpay Corporate Gateway, Barclays ePDQ (Smartpay I) and Barclays Smartpay/Adyen (Smartpay A).</p>
+      
+    <h2 class="govuk-heading-m">Using our PSP</h2>
+    <p class="govuk-body">To get started, you simply need to accept GOV.UK Pay and our PSP’s terms and conditions.</p>
+    <p class="govuk-body">You’ll find a link to both contracts in the footer when you sign in to your GOV.UK Pay account.</p>
+
+    <h2 class="govuk-heading-m">Benefits of using our PSP</h2>
+    <h3 class="govuk-heading-s">Speed</h3>
+    <p class="govuk-body">With our ready procured PSP, your account can be set up and ready to take payments in a day. With other PSPs this would normally take at least a month.</p>
+
+    <h3 class="govuk-heading-s">Ease</h3>
+    <p class="govuk-body">Using our PSP means:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>we’ve done the procurement for you, saving you time and money</li>
+      <li>account set up is simple and, once your services are live, the GOV.UK Pay team provide 24 hour support</li>
+      <li>you’re not tied into long-term costly contracts, you can stop using GOV.UK Pay and our PSP at any time</li>
+    </ul>
+
+    <p class="govuk-body">Our PSP is available for any public sector organisation to use.</p>
+
+    <h3 class="govuk-heading-s">Cost</h3>
+    <p class="govuk-body">There are no overhead costs on the account. You don’t pay a management, set up or monthly fee. You just pay the transaction charges. Nothing more. </p>
+    <p class="govuk-body">Costs are commercially sensitive. Details are available in the contract when you sign in to your account. </p>
+
+    <h2 class="govuk-heading-m">Start taking payments immediately</h2>
+    <p class="govuk-body">Using our new PSP and payment links means you:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>don’t need to build a service</li>
+      <li>can be ready to take payments in minutes</li>
+      <li>can use the payment link wherever you need to take payment - so on an email, letter or paper form</li>
+    </ul>
+    <p class="govuk-body">Follow our <a class="govuk-link" href="/payment-links" data-click-events data-click-category="Content" data-click-action="Internal link clicked">guide to creating payment links</a>.</p>
+
+    <h2 class="govuk-heading-m">How we procured our PSP</h2>
+    <p class="govuk-body">The PSP we’ve procured is a direct award on a Crown Commercial Service framework.</p>
+    <p class="govuk-body">The framework follows all OJEU rules and processes. The contract was approved by the Cabinet Office’s Commercial Director.</p>
+    <h2 class="govuk-heading-m">What next</h2>
+    <p class="govuk-body">Take a look at our PSP’s contract in your test account or contact GOV.UK Pay support with any questions.</p>
+  </div>
+</div>
+{% endblock %}
