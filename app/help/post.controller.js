@@ -2,6 +2,7 @@
 
 // NPM dependencies
 const logger = require('winston')
+const lodash = require('lodash')
 
 // Local dependencies
 const zendesk = require('../../common/clients/zendesk')
@@ -20,6 +21,12 @@ module.exports = (req, res) => {
     message: formattedMessage,
     type: 'question'
   }
+
+  lodash.set(req, 'session.pageData.help', {
+    email: req.body['email'] || '',
+    name: req.body['name'] || '',
+    message: req.body['message']
+  })
 
   const errors = validator([
     {
@@ -63,6 +70,7 @@ module.exports = (req, res) => {
         title: 'Thanks for your getting in touch',
         body: 'We will respond shortly'
       })
+      lodash.unset(req, 'session.pageData.help')
       return res.redirect('/help') // Embarrassing use of string cos import at top not working for no good reason
     })
     .catch(err => {

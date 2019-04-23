@@ -2,6 +2,7 @@
 
 // NPM dependencies
 const logger = require('winston')
+const lodash = require('lodash')
 
 // Local dependencies
 const zendesk = require('../../common/clients/zendesk')
@@ -20,6 +21,12 @@ module.exports = (req, res) => {
     message: formattedMessage,
     type: 'question'
   }
+
+  lodash.set(req, 'session.pageData.feedback', {
+    email: req.body['email'] || '',
+    name: req.body['name'] || '',
+    message: req.body['message']
+  })
 
   const errors = validator([
     {
@@ -40,15 +47,14 @@ module.exports = (req, res) => {
 
   zendesk.createTicket(ticket)
     .then(() => {
-      console.log('success')
       req.flash('info', {
         title: 'Thanks for your getting in touch',
         body: 'We will respond shortly'
       })
+      lodash.unset(req, 'session.pageData.feedback')
       return res.redirect('/ask-a-question') // Embarrassing use of string cos import at top not working for no good reason
     })
     .catch(err => {
-      console.log('fail')
       logger.error(`Error posting request to Zendesk - ${err}`)
       req.flash('error', {
         message: 'We couldn’t send your feedback, please try again'
