@@ -15,6 +15,7 @@ const directDebit = require('./direct-debit')
 const paymentLinks = require('./payment-links')
 const getStarted = require('./get-started')
 const privacy = require('./privacy')
+const cookies = require('./cookies')
 
 // Export
 module.exports.bind = app => {
@@ -32,4 +33,5 @@ module.exports.bind = app => {
   app.use(paymentLinks.router)
   app.use(getStarted.router)
   app.use(privacy.router)
+  app.use(cookies.router)
 }
