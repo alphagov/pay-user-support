@@ -8,6 +8,7 @@ const help = require('./help')
 const feedback = require('./feedback')
 const success = require('./success')
 const features = require('./features')
+const roadmap = require('./roadmap')
 
 // Export
 module.exports.bind = app => {
@@ -18,4 +19,5 @@ module.exports.bind = app => {
   app.use(feedback.router)
   app.use(success.router)
   app.use(features.router)
+  app.use(roadmap.router)
 }
