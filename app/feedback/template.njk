@@ -30,6 +30,7 @@
           label: {
             text: "Enter your message"
           },
+          value: session.message,
           errorMessage: error[0].fields.message.message
         })
       }}
@@ -43,6 +44,7 @@
           },
           id: "name",
           name: "name",
+          value: session.name,
           attributes: {
             autocomplete: "name"
           }
@@ -57,6 +59,7 @@
           id: "email",
           name: "email",
           type: "email",
+          value: session.email,
           attributes: {
             autocomplete: "email"
           }
