@@ -65,11 +65,8 @@ module.exports = (req, res) => {
 
   zendesk.createTicket(ticket)
     .then(() => {
-      req.flash('info', {
-        title: 'Thanks for your feedback'
-      })
       lodash.unset(req, 'session.pageData.somethingsWrong')
-      return res.redirect('/somethings-wrong') // Embarrassing use of string cos import at top not working for no good reason
+      return res.redirect('/success') // Embarrassing use of string cos import at top not working for no good reason
     })
     .catch(err => {
       logger.error(`Error posting request to Zendesk - ${err}`)
