@@ -1,0 +1,20 @@
+{% extends "common/templates/layout.njk" %}
+{% from "components/radios/macro.njk" import govukRadios %}
+{% from "components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+  Support - GOV.UK Pay
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+      We got your message
+    </h1>
+    <p class="govuk-body-l">A member of the GOV.UK Pay team will be in touch. We try to reply to all queries by the end of the next working day.</p>
+
+    <p class="govuk-body">Read more about <a class="govuk-link" href="https://www.payments.service.gov.uk/features/">our roadmap and features</a>.</p>
+  </div>
+</div>
+{% endblock %}

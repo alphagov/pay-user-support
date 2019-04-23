@@ -6,6 +6,7 @@ const index = require('./index')
 const somethingsWrong = require('./somethings-wrong')
 const help = require('./help')
 const feedback = require('./feedback')
+const success = require('./success')
 
 // Export
 module.exports.bind = app => {
@@ -14,4 +15,5 @@ module.exports.bind = app => {
   app.use(somethingsWrong.router)
   app.use(help.router)
   app.use(feedback.router)
+  app.use(success.router)
 }
