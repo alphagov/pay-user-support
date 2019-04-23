@@ -1,0 +1,113 @@
+{% extends "common/templates/layout.njk" %}
+{% from "common/templates/macros/sub-navigation.njk" import subNavigation %}
+{% from "common/templates/macros/image.njk" import image %}
+
+{% block pageTitle %}
+  Payment links - GOV.UK Pay
+{% endblock %}
+
+{% block beforeContent %}
+  {{
+    govukBreadcrumbs({
+      items: [
+        {
+          text: "GOV.UK Services",
+          href: "https://www.gov.uk/service-toolkit#gov-uk-services"
+        },
+        {
+          text: "GOV.UK Pay",
+          href: "https://www.payments.service.gov.uk/"
+        },
+        {
+          text: "Payment links",
+          href: "/payment-links"
+        }
+      ]
+    })
+  }}
+  {% include "common/templates/includes/flash.njk" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  {{
+    subNavigation([
+      {
+        name: 'Features',
+        href: '/features'
+      },
+      {
+        name: 'Roadmap',
+        href: '/roadmap'
+      },
+      {
+        name: 'Security',
+        href: '/security'
+      },
+      {
+        name: 'GOV.UK Pay’s Payment Service Provider',
+        href: '/payment-service-provider'
+      },
+      {
+        name: 'Direct Debit on GOV.UK Pay',
+        href: '/direct-debit'
+      },
+      {
+        name: 'Payment links',
+        href: '/payment-links',
+        active: true
+      }
+    ])
+  }}
+
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      Payment links
+    </h1>
+
+    <p class="govuk-body">Payment links allow your service to receive online payments from your users. You don’t need to have a digital service to use payment links.</p>
+
+    <p class="govuk-body">You can add a payment link to paper forms, letters or emails - or wherever you’d like your users to see it.</p>
+
+    <div class="responsive-embed responsive-embed--16by9">
+      <div class="responsive-embed__wrapper">
+        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/hLIS2bzfYuM?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <h2 class="govuk-heading-m">Benefits of using online payments</h2>
+
+    <p class="govuk-body">Online payments are 4 times more cost effective than offline methods, like cheques, money orders and cash payments.</p>
+    <p class="govuk-body">By using payment links your service can:</p>
+
+    <ul class="govuk-list govuk-list--bullet"> 
+      <li>speed up payment processes - you’ll be able to receive payments and issue refunds much quicker</li>
+      <li>reduce human error and have fewer manual processes, like taking card payments over the phone</li>
+      <li>receive fewer cheques, BACS and cash payments</li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Setting up a payment link</h2>
+    <p class="govuk-body">A payment link is quick and easy to set up and is ready to use right away. You don’t need any technical knowledge to create a payment link. You can create a payment link for a single user or make it reusable for all your users.</p>
+
+    {{
+      image('payment-link-demo.gif','Example of creating a payment link and how the title is used to generate the payment link website address.')
+    }}
+
+    <p class="govuk-body">Add the payment link where your users can see it, like in a paper form, letter or email - or even on your website.</p>
+
+    {{
+      image('self-service-payments-example.svg','Examples of a payment link on a paper form or on an email.')
+    }}
+
+    <p class="govuk-body">When your users access your payment link, they’ll be able to make an online card payment. Your users will receive a payment reference number and a confirmation email. You can use your own payment reference number or let us create one for you.</p>
+
+    {{
+      image('self-service-payments-flow.svg','Example of the payment amount and confirmation pages of the payment link user journey.')
+    }}
+
+    <h2 class="govuk-heading-m">Get started with payment links</h2>
+
+    <p class="govuk-body">Use our <a class="govuk-link" href="/getstarted">guide to getting started</a> to create an account. Or <a class="govuk-link" href="/support">contact the team</a> for more information.</p>
+  </div>
+</div>
+{% endblock %}
