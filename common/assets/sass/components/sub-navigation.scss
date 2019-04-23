@@ -24,6 +24,10 @@
     a:active {
       text-decoration: underline;
     }
+
+    &:last-child {
+      border-bottom: 0;
+    }
   }
 
   &__item--active {
