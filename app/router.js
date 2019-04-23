@@ -14,6 +14,7 @@ const psp = require('./payment-service-provider')
 const directDebit = require('./direct-debit')
 const paymentLinks = require('./payment-links')
 const getStarted = require('./get-started')
+const privacy = require('./privacy')
 
 // Export
 module.exports.bind = app => {
@@ -30,4 +31,5 @@ module.exports.bind = app => {
   app.use(directDebit.router)
   app.use(paymentLinks.router)
   app.use(getStarted.router)
+  app.use(privacy.router)
 }
