@@ -31,13 +31,6 @@ module.exports = function (grunt) {
         spawn: false,
         livereload: true
       }
-    },
-    assets: {
-      files: ['common/assets/**/*', '!common/assets/sass/**'],
-      tasks: ['copy:assets'],
-      options: {
-        spawn: false
-      }
     }
   }
 
