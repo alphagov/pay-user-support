@@ -1,0 +1,18 @@
+.partner-logo {
+  margin-right: govuk-spacing(3);
+  margin-bottom: govuk-spacing(6);
+  width: auto;
+  height: 5em;
+
+  @include govuk-media-query(tablet) {
+    margin-right: govuk-spacing(4);
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  &-smaller {
+    height: 4em;
+  }
+}

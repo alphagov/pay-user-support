@@ -1,5 +1,7 @@
 {% extends "common/templates/layout.njk" %}
 {% from "components/button/macro.njk" import govukButton %}
+{% from "components/details/macro.njk" import govukDetails %}
+{% from "components/inset-text/macro.njk" import govukInsetText %}
 
 {% block pageTitle %}
   GOV.UK Pay
@@ -53,4 +55,147 @@
     </div>
   </div>
 </div>
+<main class="govuk-main-wrapper" id="main-content" role="main">
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row pay-!-border-bottom govuk-!-margin-bottom-7">
+      <div class="govuk-grid-column-one-half">
+        <h2 class="govuk-heading-m">You can use GOV.UK&nbsp;Pay if you want to:</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>take online card payments and issue refunds</li>
+          <li>ensure your payment experience meets the Digital Service Standard</li>
+          <li>provide a trusted GOV.UK-branded experience</li>
+          <li>use payment processes that are fully Payment Card Industry (PCI) compliant</li>
+        </ul>
+
+        <p class="govuk-body">GOV.UK&nbsp;Pay is free to use.</p>
+
+        <p class="govuk-body"><a class="govuk-link" href="/features" data-click-events data-click-category="Content" data-click-action="Internal link clicked">See GOV.UK&nbsp;Pay’s features and roadmap</a></p>
+      </div>
+
+      <div class="govuk-grid-column-one-half">
+        <div class="responsive-embed responsive-embed--16by9">
+          <div class="responsive-embed__wrapper">
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/DlohjTkvFoY?modestbranding=1&amp;rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+        {% set detailsHTML %}
+          <p class="govuk-body-s">We want to make it easier for citizens to pay for government services. It’s painful enough that you have to pay for them, but at least the choice of payment types and user experience while you go through the process should be as convenient as possible.</p>
+          <p class="govuk-body-s">And then there’s the part for civil servants, or people that work in government, where we want to make it easier for them to do all the things that are connected to receiving payments. They should just be as slick, easy, and frankly as cheap as possible.</p>
+          <p class="govuk-body-s">Right now central government has hundreds of direct integrations from government services straight into payment providers, which makes it very hard to launch, change, or to make changes across government. If you have a payments platform, you plug all of them into the platform, make one change across the platform, and then just switch them on across government.</p>
+          <p class="govuk-body-s">It will be easier and more convenient for citizens to pay government. It will be easier to launch new government services and do the reconciliation, user support and refunds. And then we can launch new innovative stuff quite quickly and easily across government.</p>
+          <p class="govuk-body-s">So here we do it once, we do it right, we do it securely, we do it with a good user experience and at a low cost.</p>
+        {% endset %}
+        {{
+          govukDetails({
+            summaryText: "Transcript of GOV.UK Pay",
+            html: detailsHTML
+          })
+        }}
+      </div>
+    </div>
+    <div class="govuk-grid-row pay-!-border-bottom govuk-!-margin-bottom-7">
+      <div class="govuk-grid-column-one-half">
+        <h2 class="govuk-heading-m">Teams running services and managing payments will get:</h2>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>an easy-to-use admin tool designed for efficient payment administration</li>
+            <li>easy Payment Service Provider switching without additional technical work</li>
+            <li>24/7 support from the multidisciplinary team at Government Digital Service</li>
+          </ul>
+      </div>
+      <div class="govuk-grid-column-one-half">
+        <img class="image govuk-!-margin-bottom-6" src="/public/images/product-page_images_transaction-screen.svg" alt="Dashboard showing a list of transactions with search filters." />
+      </div>
+    </div>
+    <div class="govuk-grid-row pay-!-border-bottom govuk-!-margin-bottom-7">
+      <div class="govuk-grid-column-one-half">
+        <h2 class="govuk-heading-m">You can generate reports and issue refunds</h2>
+        <p class="govuk-body">Reporting and refunds can be done using the UI or the API. You can choose full or partial refunds.</p>
+      </div>
+      <div class="govuk-grid-column-one-half">
+        <img class="image govuk-!-margin-bottom-6" src="/public/images/product-page_images_refund-screens.svg" alt="Transaction detail page showing refund options modal." />
+      </div>
+    </div>
+    <div class="govuk-grid-row pay-!-border-bottom govuk-!-margin-bottom-7">
+      <div class="govuk-grid-column-one-half">
+        <h2 class="govuk-heading-m">Designed to meet user&nbsp;needs</h2>
+        <p class="govuk-body">The payment pages are designed to work on all devices, including mobiles. They give helpful inline error messages, so users know what to do next.</p>
+      </div>
+      <div class="govuk-grid-column-one-half">
+        <img class="image govuk-!-margin-bottom-6" src="/public/images/product-page_images_user-screen.svg" alt="A user-facing payment page with entry fields for card details and a payment summary. A helpful inline error message responds to user input." />
+      </div>
+    </div>
+    <div class="govuk-grid-row pay-!-border-bottom govuk-!-margin-bottom-7">
+      <div class="govuk-grid-column-one-half">
+        <h2 class="govuk-heading-m">Take online payments with payment&nbsp;links</h2>
+        <p class="govuk-body">Let your users make online card payments to your service, even if you don’t have a digital service. You can easily create a payment link to use in your paper forms, letters, or emails.</p>
+        <p class="govuk-body"><a class="govuk-link" href="/payment-links">Read more about payment links</a></p>
+      </div>
+      <div class="govuk-grid-column-one-half">
+        <img class="image govuk-!-margin-bottom-6" src="/public/images/product-page_images_payment-link.svg" alt="A user-facing payment page with information about what the payment is about and a input box to input the price." />
+      </div>
+    </div>
+    <div class="govuk-grid-row pay-!-border-bottom govuk-!-margin-bottom-7">
+      <div class="govuk-grid-column-one-half">
+        <h2 class="govuk-heading-m">Teams building services will get:</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>clear documentation on how to integrate with GOV.UK&nbsp;Pay</li>
+          <li>a modern RESTful API for payment initiation and administration</li>
+          <li>a test environment to prototype and test with your service</li>
+        </ul>
+        <p class="govuk-body"><a class="govuk-link" href="https://docs.payments.service.gov.uk" data-click-events data-click-category="Content" data-click-action="Internal link clicked">See how GOV.UK&nbsp;Pay works in our documentation</a></p>
+      </div>
+      <div class="govuk-grid-column-one-half">
+        <img class="image govuk-!-margin-bottom-6" src="/public/images/product-page_images_docs-screen.svg" alt="The online resource of GOV.UK&nbsp;Pay’s documentation." />
+      </div>
+    </div>
+    <div class="govuk-grid-row pay-!-border-bottom govuk-!-margin-bottom-7">
+      <div class="govuk-grid-column-one-half">
+        <h2 class="govuk-heading-m">Find out more about GOV.UK&nbsp;Pay</h2>
+        <p class="govuk-body"><a class="govuk-link" href="/support" data-click-events data-click-category="Content" data-click-action="Internal link clicked">Contact the team</a> to ask a question. Follow our <a class="govuk-link" href="/get-started" data-click-events data-click-category="Content" data-click-action="Internal link clicked">guide to getting started</a> to create an account.</p>
+        <p class="govuk-body">GOV.UK&nbsp;Pay is built and supported 24/7 by a full-time team at the Government Digital Service. The service manager is Till Wirth. </p>
+      </div>
+      <div class="govuk-grid-column-one-half">
+        <img class="image govuk-!-margin-bottom-6" src="/public/images/pay-team.jpg" alt="A photo of the GOV.UK&nbsp;Pay team at work." />
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">GOV.UK&nbsp;Pay is already working with:</h2>
+        <div class="govuk-clearfix">
+          <img class="partner-logo" src="/public/images/logos/moj.png" alt="Ministry of Justice" />
+          <img class="partner-logo" src="/public/images/logos/dit.png" alt="Department for International Trade" />
+          <img class="partner-logo" src="/public/images/logos/home-office.png" alt="Home Office" />
+          <img class="partner-logo" src="/public/images/logos/fco.png" alt="Foreign and Commonwealth Office" />
+          <img class="partner-logo" src="/public/images/logos/mod.png" alt="Ministry of Defence" />
+        </div>
+        <div class="govuk-clearfix">
+          <img class="partner-logo" src="/public/images/logos/ccc.png" alt="Canterbury City Council" />
+          <img class="partner-logo partner-logo-smaller" src="/public/images/logos/kcc.png" alt="Kent County Council" />
+          <img class="partner-logo" src="/public/images/logos/disclosure-scotland.png" alt="Disclosure Scotland" />
+          <img class="partner-logo" src="/public/images/logos/nhs.png" alt="NHS" />
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <aside class="case-study">
+          <h2 class="govuk-heading-m">Case studies</h2>
+          <p class="govuk-body">Find out <a class="govuk-link" href="https://governmentasaplatform.blog.gov.uk/2018/03/14/disclosure-barring-service/">how GOV.UK Pay helped the Disclosure and Barring Service</a> save time and reduce risk.</p>
+        </aside>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        {% set insetHTML %}
+          <p>“I’ve just had the first view of [GOV.UK&nbsp;Pay] integrated with our service. It is a really good product. We have integrated it in just 2 weeks which is astonishing and really speaks volumes about [how] well you have set the service up…”</p>
+          <p>– Service manager; UK Visas and Immigration, Home Office</p>
+        {% endset %}
+        {{
+          govukInsetText({
+            html: insetHTML
+          })
+        }}
+        <p class="govuk-body">GOV.UK&nbsp;Pay is available to all government and public sector organisations, including central government, local government and the NHS.</p>
+      </div>
+    </div>
+  </div>
+</main>
 {% endblock %}

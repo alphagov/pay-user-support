@@ -14,8 +14,4 @@
 .masthead {
   background-color: $govuk-brand-colour;
   margin-bottom: govuk-spacing(3);
-
-  @include govuk-media-query(tablet) {
-    margin-bottom: govuk-spacing(8);
-  }
 }
