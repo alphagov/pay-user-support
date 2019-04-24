@@ -60,19 +60,19 @@ module.exports = (req, res) => {
 
   if (errors) {
     req.flash('error', errors)
-    return res.redirect('/help') // Embarrassing use of string cos import at top not working for no good reason
+    return res.redirect('/support/help') // Embarrassing use of string cos import at top not working for no good reason
   }
 
   zendesk.createTicket(ticket)
     .then(() => {
       lodash.unset(req, 'session.pageData.help')
-      return res.redirect('/success') // Embarrassing use of string cos import at top not working for no good reason
+      return res.redirect('/support/success') // Embarrassing use of string cos import at top not working for no good reason
     })
     .catch(err => {
       logger.error(`Error posting request to Zendesk - ${err}`)
       req.flash('error', {
         message: 'We couldn’t send your feedback, please try again'
       })
-      return res.redirect('/help') // Embarrassing use of string cos import at top not working for no good reason
+      return res.redirect('/support/help') // Embarrassing use of string cos import at top not working for no good reason
     })
 }

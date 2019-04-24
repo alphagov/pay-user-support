@@ -10,7 +10,7 @@ const postController = require('./post.controller')
 // Initialisation
 const router = new express.Router()
 const paths = {
-  index: '/somethings-wrong'
+  index: '/support/somethings-wrong'
 }
 
 // Routing

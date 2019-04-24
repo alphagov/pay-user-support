@@ -9,7 +9,7 @@ const postController = require('./post.controller')
 
 // Initialisation
 const router = new express.Router()
-const indexPath = '/'
+const indexPath = '/support'
 const paths = {
   index: indexPath
 }

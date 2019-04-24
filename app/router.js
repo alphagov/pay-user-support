@@ -2,7 +2,7 @@
 
 // Local dependencies
 const healthcheck = require('./healthcheck')
-const index = require('./index')
+const support = require('./support')
 const somethingsWrong = require('./somethings-wrong')
 const help = require('./help')
 const feedback = require('./feedback')
@@ -22,7 +22,7 @@ const home = require('./home')
 // Export
 module.exports.bind = app => {
   app.use(healthcheck.router)
-  app.use(index.router)
+  app.use(support.router)
   app.use(somethingsWrong.router)
   app.use(help.router)
   app.use(feedback.router)

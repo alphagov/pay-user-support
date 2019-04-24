@@ -30,6 +30,6 @@ module.exports = (req, res) => {
 
   if (errors) {
     req.flash('error', errors)
-    return res.redirect('/')
+    return res.redirect('/support')
   }
 }

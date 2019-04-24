@@ -6,12 +6,12 @@ const express = require('express')
 // Initialisation
 const router = new express.Router()
 const paths = {
-  index: '/home'
+  index: '/'
 }
 
 // Routing
 router.get(paths.index, (req, res) => {
-  res.render(`app${paths.index}/template`)
+  res.render(`app/home/template`)
 })
 
 // Export
