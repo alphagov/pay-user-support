@@ -17,6 +17,7 @@ const getStarted = require('./get-started')
 const privacy = require('./privacy')
 const cookies = require('./cookies')
 const blueBadgeScheme = require('./blue-badge-scheme')
+const home = require('./home')
 
 // Export
 module.exports.bind = app => {
@@ -36,4 +37,5 @@ module.exports.bind = app => {
   app.use(privacy.router)
   app.use(cookies.router)
   app.use(blueBadgeScheme.router)
+  app.use(home.router)
 }

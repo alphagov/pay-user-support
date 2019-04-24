@@ -1,0 +1,55 @@
+{% extends "common/templates/layout.njk" %}
+{% from "components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+  GOV.UK Pay
+{% endblock %}
+
+{% set hero = true %}
+
+{% block header %}
+  {% include "common/templates/includes/header.njk" %}
+{% endblock %}
+
+{% block main %}
+<div class="masthead">
+  <div class="hero hero--breaded">
+    {{
+      govukBreadcrumbs({
+        classes: 'breadcrumbs-hero',
+        items: [
+          {
+            text: "GOV.UK services",
+            href: "https://www.gov.uk/service-toolkit#gov-uk-services"
+          },
+          {
+            text: "GOV.UK Pay",
+            href: "https://www.payments.service.gov.uk/"
+          }
+        ]
+      })
+    }}
+    <div class="hero__content">
+      <div class="hero__body">
+        <h1 class="hero__title">Take and process online payments from your&nbsp;users</h1>
+        <div class="hero__inline-image">
+          <img src="/public/images/pay-top-image.png" alt="Payment screen on mobile and dashboard with refund function." role="presentation">
+        </div>
+        <p class="hero__description">
+          GOV.UK&nbsp;Pay is a free and secure online payment service for government and public sector organisations.
+        </p>
+        {{
+          govukButton({
+            text: "See how to get started",
+            href: "/get-started",
+            classes: "govuk-button--start button--start_white"
+          })
+        }}
+      </div>
+      <div class="hero__aside-image">
+        <img src="/public/images/pay-top-image.png" alt="Payment screen on mobile and dashboard with refund function." role="presentation">
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

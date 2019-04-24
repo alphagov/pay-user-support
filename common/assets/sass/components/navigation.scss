@@ -77,3 +77,8 @@
     padding-bottom: govuk-spacing(9);
   }
 }
+
+.govuk-header__container--no-border {
+  border-bottom: 0;
+  margin-bottom: 0;
+}
