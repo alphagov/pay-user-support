@@ -36,7 +36,7 @@ module.exports = (req, res) => {
       value: req.body['message'],
       label: 'Enter your message',
       id: 'message',
-      message: 'This field is required'
+      message: 'Enter your feedback about GOV.UK Pay'
     }
   ])
 
@@ -53,7 +53,7 @@ module.exports = (req, res) => {
     .catch(err => {
       logger.error(`Error posting request to Zendesk - ${err}`)
       req.flash('error', {
-        message: 'We couldn’t send your feedback, please try again'
+        message: 'Something went wrong. Try again or email the team at govuk-pay-support@digital.cabinet-office.gov.uk with your feedback.'
       })
       return res.redirect('/ask-a-question') // Embarrassing use of string cos import at top not working for no good reason
     })
