@@ -18,6 +18,7 @@ const flash = require('connect-flash')
 const router = require('./app/router')
 const noCache = require('./common/utils/no-cache')
 const correlationHeader = require('./common/middleware/correlation-header')
+const { validateAndRefreshCsrf, ensureSessionHasCsrfSecret } = require('./common/middleware/csrf')
 
 // Global constants
 const unconfiguredApp = express()
@@ -55,6 +56,8 @@ function initialiseGlobalMiddleware (app) {
   app.use(flash())
 
   app.use('*', correlationHeader)
+  app.use('*', ensureSessionHasCsrfSecret)
+  app.use('*', validateAndRefreshCsrf)
 }
 
 function initialiseProxy (app) {
