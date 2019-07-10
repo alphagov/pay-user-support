@@ -13,6 +13,7 @@ const compression = require('compression')
 const nunjucks = require('nunjucks')
 const cookieSession = require('cookie-session')
 const flash = require('connect-flash')
+const helmet = require('helmet')
 
 // Local dependencies
 const router = require('./app/router')
@@ -54,6 +55,7 @@ function initialiseGlobalMiddleware (app) {
   app.use(bodyParser.json())
   app.use(bodyParser.urlencoded({ extended: true }))
   app.use(flash())
+  app.use(helmet())
 
   app.use('*', correlationHeader)
   app.use('*', ensureSessionHasCsrfSecret)
