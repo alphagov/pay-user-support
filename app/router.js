@@ -38,8 +38,4 @@ module.exports.bind = app => {
   // app.use(cookies.router)
   // app.use(blueBadgeScheme.router)
   // app.use(home.router)
-
-  // route to gov.uk 404 page
-  // this has to be the last route registered otherwise it will redirect other routes
-  app.all('*', (req, res) => res.redirect('https://www.gov.uk/404'))
 }
