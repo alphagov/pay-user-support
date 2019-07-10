@@ -39,6 +39,7 @@
     <p class="govuk-body-l">GOV.UK Pay provides 24-hour support for live accounts.</p>
 
     <form method="post">
+      <input id="csrf" name="csrfToken" type="hidden" value="{{csrf}}"/>
       {{
         govukRadios({
           name: "support-type",

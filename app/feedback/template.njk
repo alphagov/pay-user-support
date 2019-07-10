@@ -46,6 +46,7 @@
     }}
     
     <form method="post">
+      <input id="csrf" name="csrfToken" type="hidden" value="{{csrf}}"/>
       {{
         govukTextarea({
           name: "message",
