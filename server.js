@@ -60,7 +60,8 @@ function initialiseGlobalMiddleware (app) {
   app.use(helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self'"],
-      scriptSrc: ["'self'", "'unsafe-inline'"]
+      scriptSrc: ["'self'", "'unsafe-inline'"],
+      fontSrc: ["'self'"]
     }
   }))
 
