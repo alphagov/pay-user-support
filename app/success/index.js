@@ -1,23 +1,8 @@
 'use strict'
 
-// NPM dependencies
-const express = require('express')
-
 // Local dependencies
-const getController = require('./get.controller')
+const createControllers = require('./../../common/utils/create-controllers')
 
-// Initialisation
-const router = new express.Router()
-const indexPath = '/success'
-const paths = {
-  index: indexPath
-}
-
-// Routing
-router.get(paths.index, getController)
-
-// Export
-module.exports = {
-  router,
-  paths
-}
+module.exports = createControllers({
+  path: '/success'
+})
