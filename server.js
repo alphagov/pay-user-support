@@ -57,6 +57,13 @@ function initialiseGlobalMiddleware (app) {
   app.use(flash())
   app.use(helmet())
 
+  app.use(helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ['\'self\''],
+      imgSrc: ['\'self\'']
+    }
+  }))
+
   app.use('*', correlationHeader)
   app.use('*', ensureSessionHasCsrfSecret)
   app.use('*', validateAndRefreshCsrf)
