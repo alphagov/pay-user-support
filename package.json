@@ -71,7 +71,7 @@
     "node-sass": "^4.12.0",
     "nodemon": "^1.19.1",
     "snyk": "^1.192.4",
-    "standard": "^12.0.1"
+    "standard": "^13.0.1"
   },
   "snyk": true
 }
