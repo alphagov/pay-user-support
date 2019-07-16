@@ -75,6 +75,7 @@ function initialiseProxy (app) {
 }
 
 function initialiseTemplateEngine (app) {
+  const isDev = NODE_ENV === undefined
   // Configure nunjucks
   // see https://mozilla.github.io/nunjucks/api.html#configure
   const nunjucksConfiguration = {
@@ -83,8 +84,8 @@ function initialiseTemplateEngine (app) {
     throwOnUndefined: false, // Throw errors when outputting a null/undefined value
     trimBlocks: true, // Automatically remove trailing newlines from a block/tag
     lstripBlocks: true, // Automatically remove leading whitespace from a block/tag
-    watch: NODE_ENV !== 'production', // Reload templates when they are changed (server-side). To use watch, make sure optional dependency chokidar is installed
-    noCache: NODE_ENV !== 'production' // Never use a cache and recompile templates each time (server-side)
+    watch: isDev, // Reload templates when they are changed (server-side). To use watch, make sure optional dependency chokidar is installed
+    noCache: isDev // Never use a cache and recompile templates each time (server-side)
   }
 
   // Initialise nunjucks environment
