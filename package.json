@@ -54,7 +54,7 @@
     "nunjucks": "^3.2.0",
     "rfc822-validate": "^1.0.0",
     "serve-favicon": "^2.5.0",
-    "staticify": "^3.3.2",
+    "staticify": "^3.3.3",
     "throng": "4.0.x",
     "winston": "^3.2.1"
   },
