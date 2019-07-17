@@ -10,3 +10,4 @@ applications:
     AWS_REGION:   eu-west-1
     ZENDESK_USER: zd-api-pay@digital.cabinet-office.gov.uk
     ZENDESK_URL:  https://govuk.zendesk.com/api/v2
+    NODE_ENV: production
