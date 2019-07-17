@@ -1,12 +1,12 @@
 ---
 applications:
 - name:      pay-support
-  command: node start.js
+  command:   node start.js
   memory:    1G
   buildpack: nodejs_buildpack
   env:
-    AWS_REGION:      eu-west-1
-    PAAS:            yes
-    AWS_REGION:      eu-west-1
-    ZENDESK_USER:    zd-api-pay@digital.cabinet-office.gov.uk
-    ZENDESK_URL:     https://govuk.zendesk.com/api/v2
+    AWS_REGION:   eu-west-1
+    PAAS:         yes
+    AWS_REGION:   eu-west-1
+    ZENDESK_USER: zd-api-pay@digital.cabinet-office.gov.uk
+    ZENDESK_URL:  https://govuk.zendesk.com/api/v2
