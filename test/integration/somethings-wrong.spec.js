@@ -9,6 +9,7 @@ describe('Somethings wrong page', () => {
   })
 
   it('should show errors if user leaves everything blank', () => {
+    cy.visit('/somethings-wrong')
     cy.get('.govuk-button').click()
     cy.location('pathname').should('eq', `/somethings-wrong`)
 
@@ -18,8 +19,8 @@ describe('Somethings wrong page', () => {
     cy.get('.govuk-form-group--error').should('have.length', 3)
     cy.get('.govuk-error-message').should('have.length', 3)
     cy.get('.govuk-error-message').eq(0).should('contain', 'This field is required')
-    cy.get('.govuk-error-message').eq(1).should('contain', 'This field is required')
-    cy.get('.govuk-error-message').eq(2).should('contain', 'Please use a valid email address')
+    cy.get('.govuk-error-message').eq(1).should('contain', 'Enter your full name')
+    cy.get('.govuk-error-message').eq(2).should('contain', 'Enter an email address in the correct format, like name@example.com')
   })
 
   it('should show errors if invalid email', () => {
@@ -37,10 +38,10 @@ describe('Somethings wrong page', () => {
 
     cy.get('.govuk-form-group--error').should('have.length', 1)
     cy.get('.govuk-error-message').should('have.length', 1)
-    cy.get('.govuk-error-message').should('contain', 'Please use a valid email address')
+    cy.get('.govuk-error-message').should('contain', 'Enter an email address in the correct format, like name@example.com')
   })
 
-  it('should submit successfully with a message', () => {
+  it('should error if zendesk client not setup properly', () => {
     cy.visit('/somethings-wrong')
 
     cy.get('#message').type('Hello world')
@@ -49,6 +50,6 @@ describe('Somethings wrong page', () => {
 
     cy.get('.govuk-button').click()
     cy.location('pathname').should('eq', `/somethings-wrong`)
-    cy.get('.info-box').should('be.visible')
+    cy.get('.govuk-error-summary').should('be.visible')
   })
 })

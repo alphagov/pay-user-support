@@ -36,7 +36,7 @@ module.exports = (req, res) => {
       value: req.body['message'],
       label: 'Describe the problem',
       id: 'message',
-      message: 'Enter your full name'
+      message: 'This field is required'
     },
     {
       name: 'name',
@@ -45,7 +45,7 @@ module.exports = (req, res) => {
       value: req.body['name'],
       label: 'Name',
       id: 'name',
-      message: 'This field is required'
+      message: 'Enter your full name'
     },
     {
       name: 'email',
