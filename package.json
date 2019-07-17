@@ -14,7 +14,8 @@
     "start": "npm run server",
     "dev": "nodemon start",
     "watch": "./node_modules/.bin/grunt watch",
-    "test": "./scripts/run-cypress",
+    "test": "cypress run",
+    "test:headed": "cypress open",
     "snyk-protect": "./node_modules/.bin/snyk protect",
     "prepublish": "npm run snyk-protect"
   },
