@@ -12,7 +12,7 @@ Tests are written in Cypress and are run on PR builds with Travis. The config is
 
 # Deploys
 
-Travis also triggers deploys on changes to master. It is deployed to [PaaS]. The config is within [manifest.yml](manifest.yml).
+Travis also triggers deploys on changes to master. It is deployed to [PaaS]. The config is within [.travis.yml](.travis.yml) and [manifest.yml](manifest.yml).
 
 [Express]: https://expressjs.com/
 [GOV.UK Frontend]: https://design-system.service.gov.uk/
