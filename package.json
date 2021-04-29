@@ -56,7 +56,7 @@
     "rfc822-validate": "^1.0.0",
     "serve-favicon": "^2.5.0",
     "staticify": "^3.3.4",
-    "throng": "4.0.x",
+    "throng": "5.0.x",
     "winston": "^3.2.1"
   },
   "devDependencies": {
