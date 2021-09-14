@@ -22,9 +22,6 @@ before_script:
 deploy:
   provider: cloudfoundry
   api: https://api.cloud.service.gov.uk
-  username: payments-ci-paas-user@digital.cabinet-office.gov.uk
-  password:
-    secure: "thgZBFe8IREaQGihbgng6qe0+Q76D0zuntHeIFAM0Evq6Uaw6sOrX4qSMZUzVwa8UFmGxYC+LVXhD1lLc9blX+gzO4J6e8HwN4GyVcQ+UxsqVbGtJfKC/VxPDESzDbWR+q+V1VGJxPY8FzPapyIS8z1NPkdbuJ2UUSp/GvNjPiFD5f47oXTHf9k+Os+/pcQTqSj6aqJ3SKRjPnFdUmBG9mYigKujseT4TTR41DxC7DWFUXrE0w5U8sDUVGfSV8fV9Fu6EUlEl6s6lpseJOIlVBnY1pJy42HQAHTV68+qPS4d1qZeIayyt7na3FahbAYhNjsOxa/Xp8sxB5n/UX19DhH1BVi/ytzUSt2BglNQv8ov/gJ8AT6t8ZIVIslqeJs0r+u7WriX/6l6eb9yHRj6yxlUu5Wgu/MfzePniD0lRTh/yKLVm9gD5Ea3MBLi75oPrTOr/t0FdbVgiM/9pnUs8nIUXovT2LISiDgGxtm0AImI/sAMgbeGd0T1H6gFIHmvUBPfHqagM8vwa0CBLQWu9nydDPo405m+hE1jWvA+jP/UfOfFGF7vcClhgWUhtZRM3PNXztc3Mb5K7SPF13w6u+gsd4f86qD2K6yWxR1iVpjiTKKRgV79O3GP4OJfOya8BOQrqlYnl8+J+15HFd5Uy2moerSIu+vQqwsssqt2VUY="
   organization: govuk-pay
   space: build
   on:
