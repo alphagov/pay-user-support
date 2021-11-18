@@ -66,3 +66,5 @@ public/
 # Cypress test stuff
 test/screenshots/
 test/videos/
+
+.idea/
