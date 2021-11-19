@@ -52,7 +52,7 @@
     "minimist": "1.2.x",
     "morgan": "1.9.x",
     "node-zendesk": "^1.4.0",
-    "nunjucks": "^3.2.0",
+    "nunjucks": "^3.2.3",
     "rfc822-validate": "^1.0.0",
     "serve-favicon": "^2.5.0",
     "staticify": "^3.3.4",
